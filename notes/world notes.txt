@@ -1,0 +1,12 @@
+
+* 2 worlds dimensions
+  - 1st is hexagon level, where each hexagon represents 1 instance of the 2nd dimensions
+  - second domension represents 1 first dimension 
+
+  
+* origin point of the map is 0, 0. 
+
+* characters have a planned way to get to a locaion, if anything blocks the path, then looks for reroute based on, knowledge, safety, easyness, time. when dont know can ask for infomration and decide to adopt info and reformulate the path
+
+* c
+

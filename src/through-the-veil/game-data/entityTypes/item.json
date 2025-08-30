@@ -1,0 +1,14 @@
+{
+  "id": "1751387631001",
+  "fileName": "item.json",
+  "name": "Item",
+  "properties": [
+    {
+      "id": "1751386437238",
+      "name": "weight",
+      "type": "number",
+      "defaultValue": "1"
+    }
+  ],
+  "isAbstraction": true
+}

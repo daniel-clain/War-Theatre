@@ -1,0 +1,3 @@
+* all players actions have  chance of beign observed
+    - you can do things that are secret so that people dont know, but you may get seen and get a bad reputation. or you can do the opposite and do it all publically so that you earn trust from your followers
+    - if something is alarming npcs will give info

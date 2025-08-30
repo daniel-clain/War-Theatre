@@ -1,0 +1,10 @@
+* option builder interface
+  - goal: find the balance between controlled choice and free choice
+    ~ depending on the chars situation, if they are in a bad situation they would have limited options, where as if theyre in a good situation theyd have many options
+  - ui allows them to peice together a complete option through a drill down
+    ~ eg, 
+
+
+* temporal options
+  - some opportunities expire, the character has to consider that if they pick another option, then they will not have this opportunity later
+  - some threats are timed, and if not dealt with in time, negative repurcussions will take effect

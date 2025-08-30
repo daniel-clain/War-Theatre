@@ -1,0 +1,7 @@
+/* 
+
+  truth seeking
+  adventurous
+  values friends and family
+
+*/

@@ -1,0 +1,6 @@
+- take a photo of human people standing in 4 moving positions, 5 attackign positions, good face, evil face, neutral face, celebrate face, sad face,
+- use ai to make cosistant game art, provide it sameples and direct it to with a similar consistant theme
+- AI image generation
+  - based on archtype, good/evil, weak/powerful
+    ~ also based on sub traits wealth, beauty, strength,
+  - start with a base version of the character, and then as the game progresses and they become more weak or powerful, get it to regenerate more images using the initial one as a base so that the character looks the same, but is in a different state. eg this character, but burned skin and hair, wearing poor clothes

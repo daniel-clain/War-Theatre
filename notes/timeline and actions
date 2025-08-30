@@ -1,0 +1,17 @@
+- like gambit, time is represented by steps. the server can be running 1 second at a time from any point along the list of time stamps
+
+- when a player ques an action, the game will calculate what the world state will be if all the qued actions come to pass,
+
+  - each player only has their version of reality, the world created is only calculated based on what they think the current world state is, and what actions they think will come to pass
+
+- actions taken occur in the real word and change the real world state. a player may be missing information
+
+# each characters perspective
+
+- is build up of peices of information
+- some info is based on reality, some is based on info give, you mark each info as, believed, not believed or undecided
+- if a character goes to location, and another character there, they will get the data from the real world layer
+- examples of partial information
+  - real world has list of characters with their traits, faction and location
+
+players build a plan algorithm based on actions and conditions, eg, train troops until army is big enough then move out

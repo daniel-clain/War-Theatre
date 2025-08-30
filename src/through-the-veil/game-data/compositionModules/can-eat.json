@@ -1,0 +1,14 @@
+{
+  "id": "1751387518445",
+  "name": "can eat",
+  "fileName": "can-eat.json",
+  "properties": [
+    {
+      "id": "1751949012183",
+      "name": "hunger",
+      "type": "number",
+      "defaultValue": "2"
+    }
+  ],
+  "behaviours": []
+}

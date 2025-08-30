@@ -1,0 +1,50 @@
+*
+  3 levels of modifiers
+  each level plays
+  final scores determine winner
+
+* if the player has 
+
+
+
+* structure the pobability opitons
+  - costs 40, has an 80% chance to give 100
+    ~ infered: same as, no cost, 80% chance to give 60, 20% chance to give -40
+
+
+
+
+/* 
+  inflence, inspired by
+  - poker, 
+    ~ some knowled is private, some is public, players pay a small cost to play, and get a large prize to win, 
+  - avalon, the resistance
+    ~ game ends when after 3 successful or failed quests
+    ~ if assasin targets merlin then bad guys win
+
+*/
+
+
+
+/* 
+  probability examples
+    - there is a 80% that x is true
+      ~ if you take option 1
+        ~ and x is true then you will gain 20 points
+        ~ and x is false then you will lose 50 points
+      ~ if you take option 2
+        ~ and x is true then you will lose 40 points
+        ~ and x is fals then you will gain 200 poings
+*/
+
+
+/* 
+  * 4 colors, each player has one positive modiefier and the other has a negative modifier
+  * you get a point for each light that is lit at the end
+  * you lose 2 points if there is a green light lit
+  * 
+
+*/
+
+/* 
+* bas */

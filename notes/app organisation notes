@@ -1,0 +1,1 @@
+- design backend game and frontend agnostic of websockets, imagine u were playing 1 player mode and there is no need for the backend so the backend code can be run locally. locally has no other connected clients so should be able to run without those checks. separation of concerns

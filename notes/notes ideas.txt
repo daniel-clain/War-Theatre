@@ -1,0 +1,77 @@
+* each player is presented with multiple options to choose the best one that fits their strategy
+  - the players initial strategy should help them decide wich one to follow
+
+* you set the logic of subjects you control eg send trade caravans there , if there are bandits, make them retreat home or the nearest friendly
+
+* a game with lots of bad decisions doesn lead to death, just a bland story of mild contribution, the reward for adding a big story is more options and advantage
+the punishment for doing things that are shit story are 
+
+* they speak and their voice is modulated and the game does 3d sound based on the character playing
+
+
+* once the bad guy has an evil plan, there will be logically the best path to follow to exploit the weakenss and 
+
+* good vs evil play
+  - the game will offer either player to be evil, the longer the game goes without evil being picked the more power evil has
+  - each evil player can pick from many evil plans
+  - the good guys can pick options to block the evil plan
+  - the player thats losing gets handicap advantage, wining player gets handicap disadvantage
+  - skilled player is tempted by extra challenges to gain extra edge but high cos it failed
+
+
+  * with every bad guy plan there may be 3 ways to mitigate that plan
+
+  * the abilities dynamically generate the story line, dialog and options are done in the moment by asking for random story options at that point based on the state
+
+
+
+  * different types, goal, responsibilities, opportunities, catastrophe
+
+  * program them like Rim World, where they have a heirarchy on what work they do, and when priority ones are not logically possible, then it moves down the heirarchy, where cleaning and study are at the bottom, and 
+
+  * a way that the good guy can lose is if one of his subjects is too far gone in, the bad guy can entice them or take advantage of them. * the good guy will get less points than he thinks, if he screws the main hero, and hes good, he will lose lots of points. 
+
+  * mechanic to give secrets
+    - they pay, you give them nothing or something, the something you give them could be true or false
+    - you can make a demand to give the money back
+    - you can attack them and kill them and get it back
+    - you can 
+
+  * each bit of information has a truth rating 
+
+  * types of communication between players
+    - long distance
+      ~ pidgeon, rider, runner, magic spell, magic artifact
+    - short distance
+      ~ talk
+      ~ talk in code
+        - dont look suspicious while transfering info
+        - people can hear but wont be triggered unless they know the code
+      ~ whisper
+        - people listeneing in cant hear
+        - looks suspicious
+      ~ announce
+        * everyone in area can hear
+          - schedule an announcement
+            ~ leaders of a faction can announce regular council meetings where everyone has to report and threats and opportunities 
+      ~ yell
+        * similare to announce, except gives intimidation, leadership
+      
+
+
+  * need reason to get guys to be vulnerable
+    - low guards, no guards
+      ~ capture the princess
+  
+  * leaders give allies orders/plans to do, 
+    - followers can refuse orders/plans
+
+
+  * opportunities and threats are the same thing, situations
+    - situation has this kind of structure
+      ~ 
+
+  * game basics should be, build army, move around map attack other cities
+    - you assign one of your followers to have that city
+    - each of you are playing for the same meta team or as an independant
+    

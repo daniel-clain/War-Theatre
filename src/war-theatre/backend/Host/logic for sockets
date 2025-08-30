@@ -1,0 +1,4 @@
+- when a websocket connection comes in, they arent technically connected
+- fe shouldnt need to send client and game id over and over
+- when the server gets a message, it will know which client it is by the socket id,
+- when fe sockets connects, fe auto sends the connect message with the local client id and local name if its there

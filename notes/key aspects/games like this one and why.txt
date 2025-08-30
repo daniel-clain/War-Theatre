@@ -1,0 +1,50 @@
+* mastermind
+  - takes time to deduce the truth, you man run out of moves and lose
+  - a color can be out, in but not in the right position, or in the right position
+  - trial and error, process of elimination, narrowing downt he truth
+  - not knowing and doing tests to see the results
+
+* pokemon
+  - your strategy depends on your enemys strategy
+  - if they have water pokemon, use electric, not fire
+
+* legends of runeterra
+  - when combat and spells are on the stack. the outcome is objectively deducable before it playes out
+  - algorithm cause an effect, if this then that
+
+* poker
+  - you have your hand and you dont know whats coming
+  - you could start in a good or bad situation, and end up in a better or worse situation
+  - other players try to figure out if their hand is better than yours
+  - the 5 cards that come out are random, players adapt
+
+
+* avalon resistance
+  - evil tries to blend into the good team and not expose themself
+  - good has limited turns to test the game and deduce truth
+  - characters have asyn powers, agenda and information
+
+
+* telltale walking dead
+  - decisions matter, the story branches out depending on your decisions
+
+
+* league of legends
+  - invisible wards reveal enemy without them knowing it
+  - team champs have different strengths and weaknesses, team mates need to fulfill their role effectively for the team to be effective
+  - the game cant be won early, players take time to take down towers, become stronger, develop their strategy, understand the enemy
+
+* rimworld
+  - characters automatically do work based on what theyre assigned to and what work is availabe with different priorites
+  - random threats occur, a good player will be prepared in advance, eg medicine, food for winter, dont build house of wood incase fire, weapons and armor incase attacked
+
+
+* age of empires
+  - fog of war, when you were there before, there was a gold mine, when you come back, there are now defences built around it. updated info by scouting
+
+
+* human resource machine
+  - you see what needs to be done, you set up the algorithm so that when activated, the algorithm will yeild the result you want
+
+  
+  

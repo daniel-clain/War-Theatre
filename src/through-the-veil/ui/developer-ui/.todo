@@ -1,0 +1,4 @@
+☐ entity composure /tabs on left
+☐ new or existing click open edit panel on right
+☐ save button updates redux and posts
+☐ properties changes item, outer save saves properties

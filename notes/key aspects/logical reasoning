@@ -1,0 +1,191 @@
+Here’s a complete and categorized list of **logical reasoning patterns** that allow someone to use **existing information to deduce new truths**, especially useful in deduction-based games, investigations, or logic puzzles.
+
+---
+
+## 🔍 FOUNDATIONAL DEDUCTIVE PATTERNS
+
+### 1. **Direct Deduction (Modus Ponens)**
+
+> If A is true, then B must be true. A is true → therefore B is true.
+
+- **Example**: If the knife was stolen, the thief must have had access. The knife was stolen → the thief had access.
+
+### 2. **Contrapositive (Modus Tollens)**
+
+> If A → B, and B is false → A must be false.
+
+- **Example**: If the killer entered the room, the door must have been opened. Door is still locked → killer didn’t enter.
+
+### 3. **Elimination (Process of Elimination)**
+
+> If only one option can be true and others are ruled out, the remaining one must be true.
+
+- **Example**: If only 3 people had access, and two have alibis → the third is guilty.
+
+### 4. **Syllogism**
+
+> A → B and B → C → then A → C.
+
+- **Example**: All nobles have access. Lord Thorne is a noble → Lord Thorne has access.
+
+---
+
+## 🧩 RELATIONAL & COMPARATIVE REASONING
+
+### 5. **Transitive Relations**
+
+> If A > B and B > C → then A > C.
+
+- **Example**: Room A is closer to the sound than Room B, and Room B is closer than Room C → Room A is closest to the sound.
+
+### 6. **Mutual Exclusivity**
+
+> If A and B can’t both be true, and A is true → then B is false.
+
+- **Example**: Only one person can be in the vault at a time. The guard was in there → the thief wasn't.
+
+### 7. **Symmetry**
+
+> If A is related to B, then B is related to A (only in symmetrical relationships).
+
+- **Example**: If Lady Evelyn is married to Lord Bram, then Lord Bram is married to Lady Evelyn.
+
+---
+
+## ⏱️ TEMPORAL REASONING
+
+### 8. **Before/After Deduction**
+
+> If A happened before B, and B happened at 8 PM → A happened before 8 PM.
+
+- **Example**: Witness heard the scream before the bell rang. The bell rang at 9 → scream happened before 9.
+
+### 9. **Timeline Reconstruction**
+
+> Piecing together multiple events to build a consistent timeline and check for contradictions.
+
+- **Example**: Person A was seen at the bar at 7 PM, Person B was at home at 7:30 → no way they met at 7:15.
+
+---
+
+## 🎭 HYPOTHETICAL & CONDITIONAL REASONING
+
+### 10. **Reductio ad Absurdum (Proof by Contradiction)**
+
+> Assume something is true → show it leads to contradiction → must be false.
+
+- **Example**: If she didn’t know about the meeting, how did she reference it? → she must have known.
+
+### 11. **Counterfactual Reasoning**
+
+> "What would be true if X had not happened?"
+
+- **Example**: If the dog hadn't barked, the killer would have entered unnoticed. The dog didn’t bark → killer might be familiar.
+
+---
+
+## 🧠 INFERENCE FROM EVIDENCE
+
+### 12. **Inductive Pattern Recognition**
+
+> Repeated patterns suggest a general rule.
+
+- **Example**: Every night before a theft, the torches go out. Pattern implies sabotage before each theft.
+
+### 13. **Correlation Implies Suspicion**
+
+> A and B often occur together → possible link.
+
+- **Example**: Whenever Lord Fane is away, someone gets poisoned → he's suspicious.
+
+### 14. **Negative Space Reasoning**
+
+> What _should_ be present but isn’t?
+
+- **Example**: No footprints in the snow → no one left through the door.
+
+---
+
+## 🔁 REASONING ABOUT POSSIBILITIES
+
+### 15. **Constraint Satisfaction**
+
+> All variables must satisfy given constraints.
+
+- **Example**: 3 suspects, only 2 had keys, only 1 was on the grounds → find overlap.
+
+### 16. **Nested Deduction**
+
+> Solving one mini-puzzle unlocks another.
+
+- **Example**: Solve where the butler was → learn who had time to move the body.
+
+---
+
+## 📌 EVIDENCE STRUCTURES
+
+### 17. **Triangulation**
+
+> Using 3+ independent sources to find overlap or contradiction.
+
+- **Example**: Person A saw X, B heard Y, C denies both → find the consistency.
+
+### 18. **Anomaly Detection**
+
+> Spotting something that doesn’t fit → reveals new truth.
+
+- **Example**: Everyone took wine but one cup is untouched → something’s wrong.
+
+### 19. **Forced Conclusion**
+
+> All logical paths lead to the same answer, even if indirect.
+
+- **Example**: All roads point to this person being the only one who knew all facts.
+
+---
+
+## 🧩 ADVANCED COMBINATORIAL REASONING
+
+### 20. **Set Theory / Grouping**
+
+> Grouping entities by shared traits to isolate outliers.
+
+- **Example**: Only people with muddy boots were outside → the clean-shoed liar was never out.
+
+### 21. **Dependency Chains**
+
+> One truth depends on another being true.
+
+- **Example**: If the lever was pulled, the gate opens. Gate was open → lever must’ve been pulled.
+
+---
+
+## 🎯 INTENTION & MOTIVATION-BASED REASONING
+
+### 22. **Motive-Opportunity-Method (MOM)**
+
+> Combine motive + means + opportunity to isolate suspects.
+
+- **Example**: She had reason to kill, was nearby, and had the poison → prime suspect.
+
+### 23. **Deception Deduction**
+
+> If a person’s words contradict known facts → they’re hiding something.
+
+- **Example**: He says he was alone, but a guard saw him with someone.
+
+---
+
+## 💡 META-REASONING & STRATEGY
+
+### 24. **Recursive Reasoning ("They know that I know…")**
+
+> Reasoning about what others believe or know.
+
+- **Example**: If she knows the secret, and she’s smiling, she must think I believe her lie.
+
+### 25. **Bayesian Updating (Probabilistic Reasoning)**
+
+> Recalculate the likelihood of an option given new evidence.
+
+- **Example**: Wasn’t likely he’s the killer, but new evidence makes it more likely.

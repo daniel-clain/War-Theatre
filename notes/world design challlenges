@@ -1,0 +1,21 @@
+# how to design relationships
+
+- horse, item, location, character challenge
+
+  - tile has horse in it, and a cave
+  - cave has a horse in it
+  - horse has an item in its saddle bag
+  - character goes to tile, goes in cave, takes item from horse saddlebad, rides horse out of cave to new tile
+
+- factions, heirarchy, city
+
+  - can faction exist without a leader or city
+  - does faction have characters array that includes leader, how is leader indicated
+  - does faction also have leader prop that has leader assiged and also in characters list
+  - does the character object have a faction property referencing the faction? does the character have a prop indicating he is leader?
+  - does faction have many cities/towns, which is the capitol
+  - a city can be abandoned with no faction, but if it does have a faction does the city have a prop that it is the capitol
+  - if a faction leader dies is the next leader auto or elected
+  - if a factions capitol is destroyed, is the next city auto
+
+- what is a character type from the perspective of the characters controller vs the view of a character from another characters perspective

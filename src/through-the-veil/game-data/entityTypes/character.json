@@ -1,0 +1,18 @@
+{
+  "id": "1751386437234",
+  "fileName": "character.json",
+  "name": "Character",
+  "properties": [
+    {
+      "id": "1751386437236",
+      "name": "age",
+      "type": "number",
+      "defaultValue": "5"
+    }
+  ],
+  "isAbstraction": false,
+  "composedWith": [
+    "1751387518445",
+    "1751387518449"
+  ]
+}

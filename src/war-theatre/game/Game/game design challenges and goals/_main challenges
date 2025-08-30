@@ -1,0 +1,4 @@
+- keeping track of complexity in prompts
+  - do i treat each npc character like a main character with gpt promps?
+  - how much back info do i need to provide for the story to be maintained
+  - how do i manage the complexities of what each character does or doesnt know

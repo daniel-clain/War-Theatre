@@ -1,0 +1,10 @@
+{
+  "name": "Town",
+  "fileName": "town.json",
+  "isAbstraction": false,
+  "composedWith": [],
+  "properties": [],
+  "behaviours": [],
+  "extendsEntity": "1751891632413",
+  "id": "1751948346606"
+}

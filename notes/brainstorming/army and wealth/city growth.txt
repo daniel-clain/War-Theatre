@@ -1,0 +1,9 @@
+* city grown and army training
+    - move solo, with elite gueard, and/or with an army
+    - visit a place or attack it
+      ~ if you lose the attack you have a very high chance that the leader and elite guard will escape and route home
+    - attack army onto a city works like units one oneside cancle out the units on the other side based on weapon damage and armor absorption, the battle takes a while to play out and you can give commands during the battle, as their numbers run out, you capture the city
+      ~ you will have a period taking over the city, the longer it takes the more atrition you will have
+      ~ every city must be left with a minum army percentage of the city size
+      ~ you decide how much army you take witha  slider
+      ~ as you move the slider it shows you how many based on skill level and armor quality

@@ -1,0 +1,7 @@
+how does a player get points
+==============================
+* by making real world difference with actions
+* at any point in time, full future states can be generated based on current actions and plans. if the future state of the the word at 5minutes has a total suffering level of 300, and you take actions that change that future state to 100, then you have aleviated 200 suffering
+* 
+
+

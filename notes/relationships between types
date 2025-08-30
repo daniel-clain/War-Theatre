@@ -1,0 +1,109 @@
+- a character may or may not be part of a faction
+- a character can create a faction, the requirement of creating a function is provide a leader
+- a faction must always have a leader
+- if a faction leader dies, a member can assert leadership, of the faction memebers can vote for a new leader
+- if all members of a faction die, then the faction becomes old and inactive
+- a character can invite another character to join a faction
+- a leader can step down as leader, leaving obligation of someone else to assert leadership or having a vote
+- a character can do a coup and kill the leader and become leader
+- a leader can exile members from the faction
+- a faction can have any number of cities
+- a faction chooses one city to be their capitol
+- a character can go city and claim control of it by all faction that was controlling it
+- a city can be destroyed and still owned as city-in-ruins
+- a city can be abandoned by a faction
+- characters can exist without factions, they do not need to be part of a faction
+- a character can go to any city, if they go to a city owned by an ally you go as a friend, if you got to a neutral you are a guest, and if you go to an enemy you go as a threat or spy.
+- a faction generates money for the leader to use
+- a leader of a faction gives opportunities to its members. a leader can offer a charater to do spy work and provide information for the reward of money
+- character has a small chance to have inate gifts, misfortune, or traits
+  - normal trait range
+    ~ beauty, ugly = -5, beautiful = +5 ,
+    ~ intelligence, dumb = -5, smart = +5,
+    ~ sense, numb = -5, sensitive = +5
+    ~ coordination, clumsy = -5, agile = +5
+    ~ strength, frail = -5, muscular = +5
+    ~ empathy, cold = -5, compassionate = +5
+    ~ mental resillience, neurotic = -5, stoic = +5
+    ~ Conscientiousness, lazy = -5, productive = +5
+    ~ bravery, coward = -5, brave = +5
+    ~ charisma, weirdo = -5, charismatic
+    ~
+  - rare gifts
+    - good memory
+    - fast learner
+    - very intelligent
+    - creative innovator
+    - strong
+    - fast reaction time
+    - high energy recover
+- faction heirarchical social structure, relative to selfishness vs selflessness
+
+  - players with big ego assert themself in higher positions, they can be challenged to back it. the arogant ego assertion can get them in a higher position with access to more power and reources, however they will build a fragile defence about being challenged, and if it fails, then they will probably fail the competency challenge. if a honest confident character with ego is challenged, then they can back it up.
+  - it is the role of mebers of the faction to be suspicious that a character is in a higher position than they should be.
+
+- social rejection and humiliation cause suffereing, an egotistical person will fell more pain
+
+fundamental inate traits
+
+- intelligence
+  ~ better info gain
+  ~ better options
+- heightened sense: hearing, seeing, smelling, taste
+  ~ better threat detection
+  ~ gain better info from hearing and seeing
+- coordination: agility, reaction time, and physical precision
+  ~ better reaction to ambush/surprise/quick threats.
+  ~ better escape, fighting skill,
+  ~ less accidents
+- Physiological : Determines endurance, physical stamina, and energy levels.
+- Emotional & Psychological Disposition
+  ~ empathy
+  - ability to understand how other characters feel
+    ~ mental resillience
+  - less vulnerable to mental illness, recovers quicker
+    ~ aggression
+  - is tilted toward the attack option and less the retreat option
+- artistry
+
+* skill talent
+
+  - different characters will have different degrees of success doing specific challenges eg a talented skilled spy would be more effective than an untalented one
+
+* weightings for success
+
+  - higher chance if
+    ~ has natural tallent
+
+* what causes state change in the world
+
+  - timed automatic things
+    ~ fuse of bomb is lit, after tie it explodes changing state
+  - character actions
+    ~ attacking, changing location, taking action
+
+* what causes state change in characters
+  - experiences they have
+    ~ what they see, hear
+    ~ when a character has an expeirence they process it
+    - how does it make them feel, do they like it or not, does it align with their values and beliefs
+    - new information may be revealed by the event
+* what causes an experience in a character, if an event occurs and they see or hear it
+
+  - an event is any action/effect or state changes that happens
+  -
+
+* a character builds a plan and takes action
+
+  - a plan is an algorithm of actions
+  - as they carry out the plan they perform the actions
+  - a character has an estiamtion of future state based on future calculated state change
+    ~ eg when i work on the 5 day plan to climb the mountain and get the sword, then if i succeed, the new game state will be to have the sword
+  - chain chapters of a plan together
+    ~ after i get the sword, then go to the old lady and get the magic powder, then go to the old monk in the forest with the sword and powder to get it enchanted
+
+* contingency plan, responsive
+
+  - if the circumstance changes to this, then do this plan
+
+* when a character has an experience, then they can take the action to communicate their experience with other characters, they will see that as information that they can cosider to believe

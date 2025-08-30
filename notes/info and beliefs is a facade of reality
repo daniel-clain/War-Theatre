@@ -1,0 +1,9 @@
+- in BOTCT, there is the concept of real world being confirmed
+
+  - virgin
+    ~ when townsfold nominates and dies, there are 2 scenarios where that can happen, if there is no witch, nominated must be townsfolk
+
+- need super simple example to build around
+  - if 1 option is possible, then logic is locked in
+  - if multiple options are possible, goal is to logically eliminate options
+  -
