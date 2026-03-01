@@ -1,0 +1,29 @@
+- every character has a future field of posibility, where decisions and actions can interfere with others and cause chain reactions of cause and effect.
+- the game doesnt know how the story will play out when it starts, it just knows there is a pattern that it needs to play out within constraints, the constraints subtly channel the player into
+  - learning the initial position
+  - learning whats going on in the area
+  - assessing what area is best to spend their efforts
+  - players want to set things up so that in the climax, they use everthing that they can in the way that makes most sense to them, and if they outplay their opponents they win
+- the climax is always based on strategic hidden-intent confrontation. Three things only: Hidden Intent, Asymmetric Information, Irreversible Revelation. Everything else is decoration.
+- the beginning is players chance to feel like decisions matter, the game offers a wide range of freedom at the beginning. this is important because the rest of the game the options need to be more controlled until everything converges.
+- the beginning is always the same and always different
+  - same, you invest your time in either explore and learn, or work toward changing world state. good players will identify leads that hint more value, and try to maximise their time to investing it into things that yeild the best return value
+  - different, always differen charater, place, world and system mechanics, backstory, values, rivals
+- the game progressively generates
+  - initial game generates a lot, then leaves it open for player plans
+- the game looks at each player character situation and consideres their thrats, opportunities, information, plan, values. the game sees how far the game has progressed and what the evil plan is. the game will evaluate where the game is on a whole based on everyones plans, and it identifies the right options to give each player. the option it gives the player is designed to test them at their skill level. if the player is dumb, it will put them in obvious simple decisions situations, whereas to a more advanced player, the game will provide them with a wider range of options, where most are logically bad if the player is smart enough to see the connections and mechanics
+- the game is designed to reward teh player for making the right decision at the right time. its also designed for competition so that each player will want to hinder their rivals as one of the main ways of winning
+- every game fundamentals
+  - any character can try to kill any character at any time
+  - all games have a good vs evil system, and if you kill an innocent for no reason you are considered evil or insane. good players are rewarded for joy and lose points for suffering,
+  - concept of law means punishment needs to be admininstered for the greater good. good cant imprison without proving guilt
+  - evil guys must play games of deception to do evil acts without being caught
+  -
+- training mode has levels
+  - the game starts in the simplest possible games, each level adds more on
+  - by last level you unlock multiplayer
+  - first level gives one of the fundamental moves
+  - each level after randomly generates a game where they will lose the game unless they use random new command
+  - when generating random levels, it consideres what nodes on which tree have already been passed, each game gen calculates what the player knows, what theyre good at, and what they need practice on, when they demonstrate they know a concept, the game progresses to introduce nodes further along the brances for them to add to the branch theyve been progressing on
+    ~ the idea is, characters start with no skills or experience, and then you micromanage how to do routines or combat down to the granular level
+    ~ every scenario would have an over simplified threat will occur if the player doesnt solve the puzzle. the scenario is derived from the constraints of the skill challenge

@@ -7,5 +7,6 @@
     "strict": true,
     "esModuleInterop": true
   },
-  "include": ["./src/through-the-veil/backend/**/*"]
+  "include": ["./src/backend/**/*", "./src/shared/**/*"],
+  "exclude": ["./archive/through-the-veil/**/*"]
 }

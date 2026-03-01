@@ -15,10 +15,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": [
-    "./src/frontend",
-    "./src/shared",
-    "src/war-theatre/ui/index.tsx",
-    "src/backend/MainGame"
-  ]
+  "include": ["src/ui/**/*", "src/shared/**/*"],
+  "exclude": ["archive/through-the-veil/**/*"]
 }

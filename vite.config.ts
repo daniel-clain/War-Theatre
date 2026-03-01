@@ -2,17 +2,20 @@ import react from "@vitejs/plugin-react"
 import path from "path"
 import { defineConfig } from "vite"
 
-const app = process.env.APP || "through-the-veil"
+const app = process.env.APP || "war-theatre"
 
 export default defineConfig({
-  root: `src/${app}/ui`,
+  root: app === "war-theatre" ? "src/ui" : `src/${app}/ui`,
   plugins: [react()],
   css: {
     postcss: path.resolve(__dirname, "postcss.config.js"),
   },
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, `src/${app}/ui`),
+      "@": path.resolve(
+        __dirname,
+        app === "war-theatre" ? "src/ui" : `src/${app}/ui`
+      ),
     },
   },
   server: {

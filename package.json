@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev:ttv": "cross-env APP=through-the-veil vite --host",
-    "dev:ttv:data-writer": "nodemon --watch src --exec \"ts-node-dev --project tsconfig.server.json\" src/through-the-veil/backend/data-writer.ts"
+    "dev:wt:frontend": "cross-env APP=war-theatre vite --host",
+    "dev:wt:backend": "ts-node-dev --project tsconfig.server.json src/backend/server.ts",
+    "dev:wt": "concurrently \"cross-env APP=war-theatre vite --host\" \"ts-node-dev --project tsconfig.server.json src/backend/server.ts\""
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.7.0",

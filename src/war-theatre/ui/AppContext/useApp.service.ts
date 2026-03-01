@@ -1,3 +1,0 @@
-export function useAppService() {
-  return {}
-}
