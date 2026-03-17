@@ -1,7 +1,7 @@
-import { Coords } from "./biome";
 import { FactionId } from "./faction";
 import { Mechanic } from "./mechanic";
-import { TownTypes } from "./town";
+import { BuildingTypeName } from "./town";
+import { WorldObject } from "./world-object";
 
 type LandmarkTypes =
   | "cave"
@@ -9,15 +9,12 @@ type LandmarkTypes =
   | "altar"
   | "farm"
   | "hideout"
-  | TownTypes;
+  | BuildingTypeName;
 export type LandmarkId = string;
-export type Landmark = {
-  landmarkId: LandmarkId;
-  coords: Coords;
+export type Landmark = Required<WorldObject> & {
+  objectType: "landmark";
   name?: string;
   controllingFaction?: FactionId;
   type: LandmarkTypes;
   mechanic?: Mechanic;
 };
-
-export type KnownLandmark = Partial<Landmark>;

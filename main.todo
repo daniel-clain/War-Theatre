@@ -1,0 +1,20 @@
+Dev:
+    ☐ instant actions
+        * run away, attack, hide, call for help, trigger plan
+    ☐ player meditation
+        * ai returns what character thinks and feels 
+            ~ why its needed
+                * its asking a lot for the player to gather all the character info and collectively summarise the situation, by ai doing it, its coming up with a solution for them, it just clearifying the situation, they still have to come up with their own plan
+    ☐ plan builder
+        * players construct a submission to ai, first starting from general focus, and narrowin scope. then once theyve narrow it down with ui options, then theyre left with an text input specifics within the general scope
+            ~ why this works
+                * the general narrow down tools arent so specific that is narrowing down the details for them
+                * if ther ewere now narrow down tools then the details of their plan would not be contained and be confusing for ai what the scope is
+    ☐ future state calculator
+        * based on the characters world view of the current state of the game plus future event and plans, the game can predetermine what future state will be if nothing changes
+            ~ it will predict if the future state is death
+            ~ it will predict what future points lost/gained will be
+            ~ in general, it will show what future world view state will be if nothing changes. other characters may die, items may be gained/lost, etc
+        * players can put plans in place that will change the future state
+            ~ then when future state is calculated, it will show the difference between the current future state and the future state if the plans are executed
+

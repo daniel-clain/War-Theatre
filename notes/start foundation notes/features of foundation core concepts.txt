@@ -1,0 +1,124 @@
+* early game should teach three lessons
+    1 observe the world
+    2 infer causes
+    3 act logically
+
+* fail to adress threat
+    - move down the power ladder
+    - i dont want this so i must stop it
+
+* succeed to take opportunity
+    - more up the power ladder
+    - i want this but i cant get it until i have access and power
+
+
+* climb up to have more power, security, access
+    - easy to defend from people below you
+
+* characters create threats and opportunities for eachother
+    - offer other players to higher on the ladder in exchange for something
+    - have plan to cause other players to go lower on the power ladder, unles they do what they wat
+
+
+* events occur and character perceive it 
+    - with their sense 
+        ~ see, hear, feel
+    - form a story of what happened, modified by beliefs, values, knowledge, information
+    
+
+
+brainstorming
+================
+
+* plans 
+    - experince a range of scenarios
+        ~ plan that becomes invalid
+        ~ sub plan for dependency becomes blocked, come up with another sub plan to satisfy that dependency
+    - different types of plan
+        ~ hire someone and give them direction
+        ~ plan to change world state with action
+        ~ plan to get info through
+            - friendship
+            - spying, hide near location or character undetected to see and hear
+            - infiltration, gain unauthorised access undetected
+            - coercian threaten/blackmail
+            - bribe/payment
+            - investigation
+            - negotiation
+            - trikery/deception
+
+
+* plan builder
+    - chain of action dependencies
+    - general scope drill down
+        ~ apply tags to the plan scope
+            - look for more info
+                ~ about what (must link reference information)
+                ~ from where/who (must link reference)
+            - attack character
+                ~ intesity hurt/injure/kill
+            - get item
+                ~ from where/who
+                ~ how buy/steal/ask      
+    - players can have multiple plans at once
+        ~ they have priority order (like rimworld)
+    - plan validity and dependencies
+        ~ 2 types, invalid vs blocked dependencies
+            - a plan may valid and dependencies unblocked, but if state changes, and key dependencies are impossible to be met, then the plan is invalid and cant be fixed and is unachievable no matter what. eg, if the plan is to rescue the princess, and the princess dies, the plan is impossible thus invalid
+            - a plan may be valid with blocked dependencies, the plan is not impossible because of the blocked dependencies, its just those dependencies need to become unblocked for the plan to be carried out. eg if the plan is to do the ritual, but the ritual requires 10 black lotus flowers, then the ritual is blocked because the dependency is not met
+        ~ plans are recursively made up of sub plans
+            - eg, if the plan is to do the ritual, and the dependency is 10 plack lotus flowers, then a sub plan is to get lotus flowers, and then 3 sub plans for that could be to search forest to pick black lotus flowers, or could be to go to market to find merchant selling black lotus flowers, or go to graveyard to steal flowers etc. any one of the sub plans can meet the dependency of the parent plan.
+            - as a sub plan is completed, then it recursively checks up the parent heirarcy to see if the top level plan is unblocked and can be carried out
+        ~ if plan has multiple dependencies, and one of them is blocked, then the player can choose weather to work on completing the unblocked dependencies or not. if they are confident the blocked dependency will become unblocked, it may be worthe getting the other dependencies completed, but if theyre not sure the other dependency can be unclocked, then working on the other dependencies may be a waste of time
+
+* 
+            
+* ladder of power logic
+    - bottom level is no assets, not access, bad reputation, weak, no friends
+    - top level is all the assets you want, full access, great reputation, great strength, many friends
+    - goals for each level
+        ~ no food or water = death, so either forage, steal, or buy
+            - forage is scare
+            - if steal, each time same place greater risk of caugh by law enfrcement
+            - buy needs money
+        ~ sleep/rest/recovery, quality relative to conditions
+            - if outdoors, very low if good weather, can die from cold, cant sleep in rain, high risk of animals peopel attack
+            - tent means can sleep if cold or rain, less chance of animals and people attack
+            - secure house with bed, quality sleep, good protection from weather and animals and people
+            - can steal/buy/ask for tent
+            - can pay for own house, or sleep in friends house, squat in empty house
+        ~ money
+            - can steal or earn or be gifted
+            - pays for food, house, items, services, access
+            - can be worker or own business, amount relative to reputation
+        ~ status/reputation
+            - having good reputation of being skilled or wealthy or many friends
+            - bad actions make bad repuation, good actions make good reputation
+        ~ faction politics and influence
+            - authority for control, access, information
+            - make decisions, rules, recruit/fire people under you
+            - top level pyramid heirarchy structure, 1 leader at the top delegates responsibility to 1 lvl down, and each of them delegate 1 level down. people must follow level above or lose their position
+            - council meetings where top level make faction plans, elect memebers for positions
+            - tax for faction funds
+            - faction can have, army, spies, assasins, diplomats
+
+
+
+* ladder of power types
+    - access 
+        ~ guards block you unless youre allowed
+        ~ acess to information that others dont
+    - authority
+        ~ you can tell others what to do
+        ~ allowed to take actions others cant
+        ~ access to info others dont
+        ~ you can decide the rules
+    - money
+        ~ reinvest
+        ~ hire people to work for you
+        ~ buy goods and services
+        ~ pay for info
+    - power
+        ~ threaten
+
+    

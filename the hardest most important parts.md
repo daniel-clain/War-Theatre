@@ -1,27 +1,30 @@
-- look at it from the perspective of the player
-  ~ what do they want to do
-  ~ what do they care about
-  ~ they will do what is
+- Purpose:
+  - once predev game design has finished and the game is taking shape, its important to know what are the key things that needed to be figured out
+    ~ one thing ive noticed when trying to figue out the game is that its easy to get caught up ont he cool parts that arent the core foundational parts
+    ~ the quality of things drops overtime because the people maintianing it lose vision of the core pillars
+    ~ its important to list the hard things early cos they may not see hard later in hindsite. and the nececity to emerge the core pillars well be lost later
 
-- player situation
-  ~ it should be contrived so that given the situation, perspective, options, projected outcomes, there is only 1 choice, to act or not, and one of the 2 decisions is much better than the other
-  ~ at any point a player can do anything, global state can be changed by actions,
+- Core pillars
+  - players have free choice
+    ~ players arent given a list of options they didnt think of
+    ~ its more rewarding to see your own ideas work and its not rewarding to do what youre told, even if its cool
 
-- demonstrate the correct gameplay
-  ~ it should be clear to players waht their goal is and what the skill of the game is
-  ~ its about information, mechanics, planning, strategy, decision making, risk,
-  ~ the main skill of the game should be around mind games and trickery, spying, lies, bluffs
+  - game always ends in a high stakes climax for all players
+    ~ players dont want to be eliminated early, they want the climax
+    ~ they want to feel they their investment has a payoff
+    ~ climax is a storied end that feels satisfying and gives closure
 
-- player plan building
-  ~ needs a plan building system
-  ~ this could be awesome or difficult or annoying
-  ~ players shouldnt be given options of what action to take, the skill of the game is the get information and then see they need more info, then they have enough to have a strategy, and they want to keep their plan secret because other players will want to know to play around eachother. this aspect of the game needs to be emergent. the rest of the game is designed to enable/facilitate this experience
+  - different every time
+    ~ instead of pre designed scenarios, each are dynamicly generated and follow a scafolding
+    ~ players cant use prior knowledge to their advantage
 
-- ai generate story and control player options
-  ~ for a good climax, players need to be continually directed and balanced and challenged
-  ~ the game state has to hold what is true and play them out consistant to the base line reality
+  - game tracks players play style and uses that for their custom experiencs
+    ~ skilled/intelligent vs simple/dumb
+    ~ immersive/roleplay vs technical/competitor
+    ~ evil/imoral vs good/horoable
 
-- time control
-  ~ if all players plan is inplace, then fastforward to next no plans
-  ~ players get awarded for having plan in place by earning more slomo time
-  ~ in desperate situations players use up their slomo time to respond to surprises
+  - separate player story lines conflict and converge
+    ~ players exist in the same world and will get in eachothers way, its ai jobs to help them resolve conflicts in a fun logical way
+
+  - information, deduction, trust and spying
+    ~ this game isnt about being stronger, its about being smarter, every game should focus on maximising game play mechanics

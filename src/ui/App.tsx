@@ -1,11 +1,10 @@
+import { useContext } from "react";
 import "./App.css";
-import { useContext, useState } from "react";
 import { Host_C } from "./Host/Host";
 import { ScenarioBuilder } from "./views/ScenarioBuilder/ScenarioBuilder";
 
-import { Game_C } from "./views/Game/Game";
-import { useAppService } from "./Context/useApp.service";
 import { AppContext } from "./Context/AppProvider";
+import { Game_C } from "./views/Game/Game";
 
 export function App_C() {
   const { activeView, playerInGame, setActiveView } = useContext(AppContext);

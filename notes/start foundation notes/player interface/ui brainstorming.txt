@@ -1,0 +1,51 @@
+* what should be the design principals of the ui
+    - its all about ideal user experience
+    - it should be intuitive
+    - it should not be overwhealming, cluttered
+
+* layout
+    - should be designed for phone
+    - it should have single focus and not try to put separate focus on the screen at once
+    - a navigation icon should expand to show a nav button for each separate concern, and when clicked on the main ui should show that concern
+    - im not sure, but i feel like the character real time top down 3rd person veiw should always be showing as a primary permanent always active interface, it should be separate for the other concerns. maybe the screen is divided into 2 main parts, the top is the always active character view, and the bottom half should be the navigation and whatever view is active.
+    
+
+* list of features
+    - character 3st person view (police stories style or mineraft style)
+        ~ top down
+        ~ can only see cone infront
+        ~ sounds radiate from origin
+        ~ real world as it is
+    - characters map
+        ~ symbols that represent
+        ~ is it the players job to create their map or is it automatic
+        ~ should show places they know and not show palces they dont
+        ~ 4 types of map overlay
+            - empirial evidence, they went there recently and the know base reality
+            - memory fog of war, it was like that last time they were there, but its been a while and it could have changed. eg last time/place person was seen
+            - information, character may get info from a book or person or map, its not actually been seen yet so its on the map as a placeholder until verified
+            - future state, how the map will look in the future if anticipated events play out
+    - player's event log
+        ~ detailed everything that happend
+    - player's info
+        ~ key info extracted, regardless of beliefed or not
+    - player's beliefs
+        ~ what your character believes is true
+    - players stats
+        ~ skill, house, backstory, job, position title
+    - know characters
+        ~ who your character knows
+        ~ points for each player
+            - trust, faction, position, where they live, their stats, beliefs, state, log, their know peopel and their relationship, their plans, your past encounters
+    - known locations
+        ~ buildings: townhall, blacksmith, church
+        ~ landmarks: cave, obelisk
+    - player's state
+        ~ hunger, energy, money, emotion
+    - players plans
+        ~ ordered list of player decided plans
+        ~ character auto fallback plans
+    - plan builder action
+        ~ tool to build plan prompt to ai (ai returns plan)
+    - meditate action
+        ~ takes all data to ai for it to return storieds summary

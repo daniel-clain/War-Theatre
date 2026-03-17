@@ -1,0 +1,18 @@
+* what happens once the player deals with the initial threat
+    - leads to discovering new threat
+
+
+* how does the game 
+    - keep them in scope
+    - show them what their options are
+
+* how does the player form their action plan without the game telling them what their options are
+    - 
+
+
+
+* idea, player option, get summary of character situation
+    - click a button, players state goes to ai, ai returns a storied internal monolog/meditation/thoughts about the current situation
+        ~ things that are upsetting them
+        ~ their recent experiences
+        ~ what they want

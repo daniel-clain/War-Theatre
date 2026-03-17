@@ -1,0 +1,40 @@
+* updates are only sent based on server tick
+    - each tick has a list of state updates
+
+* terrain updates
+    - 3 types
+        ~ never seen
+        ~ can see now
+        ~ has memory of seen in the past
+    - as a character moves
+        ~ if they are 
+
+* 2 types of spatial unit
+    - world unit
+        ~ the smallest unit
+        ~ non blocky 
+        ~ game objects have small origin point at world unit, and its hit box is a poligon centered around that point
+    - tile
+        ~ why
+            * as a character moves around, they observe their surrounding and it becomes know to them
+                - if a tree is in range, then the ui renders the tree at its world unit
+                - however other non object aspects like terrain type, fog, water, cant be so granular as objects
+        ~ what
+            * tiles are only for non-object environment data
+                - terrain type
+                    ~ sand, water, grass, rock
+                - temperature
+                - visibility
+                    ~ smoke, fog, rain
+                - elevation
+
+* world generation
+    - town
+        ~ towns build from and origin point spiraling out, once it meets it building requiremnts, a town wall is created around it
+        ~ town resources outside the town, like farm, lumber camp, watermill, mineraft
+    - terrain
+        ~ rule based random generation
+        ~ has priority dependency ordered
+            - elevation -> river -> lake/sea -> grass/rock/sand/mud
+
+        

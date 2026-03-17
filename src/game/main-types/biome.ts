@@ -1,4 +1,4 @@
-export type BiomeId = string
+export type BiomeId = string;
 export type BiomeType =
   | "forest"
   | "swamp"
@@ -6,15 +6,10 @@ export type BiomeType =
   | "costal"
   | "mountains"
   | "jungle"
-  | "grasslands"
+  | "grasslands";
 
 export type Biome = {
-  biomeType: BiomeType
-  biomeId: BiomeId
-  areaPolygon: string
-}
-
-export type Coords = {
-  x: number
-  y: number
-}
+  biomeType: BiomeType;
+  biomeId: BiomeId;
+  areaPolygon: string;
+};

@@ -1,3 +1,4 @@
 export const gameConfig = {
-  worldSize: { xAmount: 10, yAmount: 10 },
+  worldUnitsPerTile: 4,
+  pixelPerWorldUnit: 20,
 };

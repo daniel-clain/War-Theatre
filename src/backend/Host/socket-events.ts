@@ -5,7 +5,6 @@ import { ClientState, GameLobby } from "../../shared/types/host";
 import { Scenario } from "../../shared/types/scenario-variables";
 
 import { createGame, Game } from "../../game/game";
-import { Player } from "../../game/main-types/player";
 import { Host } from "./host";
 
 export function handleSocketMessages({
@@ -85,21 +84,15 @@ export function handleSocketMessages({
 
   function startGame(scenario: Scenario) {
     const gameLobby = getGameLobbyBySocket();
-    const players: Player[] = [
-      gameLobby.creator,
-      ...gameLobby.playersJoined,
-    ].map((client): Player => {
-      const c = host.connectedClients.find(
-        (c) => c.clientId == client.clientId
-      )!;
-      if (!c) {
-        throw `should have found Client ${client.clientId} `;
-      }
-      return {
-        clientId: c.clientId,
-      };
+
+    const clients = [gameLobby.creator, ...gameLobby.playersJoined];
+    const game = createGame(scenario, clients);
+
+    game.onPlayerStateChange.subscribe(({ clientId, playerGameState }) => {
+      host.connectedClients
+        .find((c) => c.clientId == clientId)
+        ?.socket?.emit("PlayerGameState", playerGameState);
     });
-    const game = createGame(scenario, players);
 
     host.games.push(game);
 

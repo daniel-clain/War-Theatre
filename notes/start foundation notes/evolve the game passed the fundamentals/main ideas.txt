@@ -1,0 +1,23 @@
+* there are many fun aspects of the game, and its important to not lose site of them while developing the mvp foundational concepts
+  - periodically ai gives players a story update, and update from the starting back story, the game sees story flow and delivers it to the player to remind them of the story cadence
+  - game end story replay cinematic, scenes from all players like a movie for all to see how the game played out
+  - spying, deception, trickery, good/bad luck
+  - economy/market goods/services, income, theft
+  - information, misinformation
+  - story cadence, repeated tension then release, building to the climax, multiple endings, each character has their own story
+  - archtype personality traits, good evil, values, backstory
+  - faction collaboration, roles, meetings, election
+  - legal system, law enforcement, trial, evidence, prison
+  - armies, assasination, traps
+  - adventure, quest, mission
+  - investigation, logical resoning, deduction, questioning
+  - sensory range, cone of vision, range of hearing, seeing and hearing obfuscation
+  - 2 character action modes, player control, fallback to automated mode
+  - players are conditioned to personal care/value/meaning. care comes from investing time and effort into something, then they are genuinely motivated to protect it. but the thing they care about should also have some mechanical advantage. eg protect sister, many instances or working toward sister being safe, if she dies huge points loss, if she lives she mechanically helps to win
+
+* the concept of magic has pros and cons
+  - magic is like a joker wild card, you can solve any problem with it
+  - problem is magic is not always intuitive because its not based on reality. (but it can be intuitive, frost bolt slows, roots hold in place, sheild bubble blocks)
+  - magic is a lazy copout, and intuitive realisic threats should be the priority
+  - magic should be made to be special by being rare, not ubiqutous
+  - once the world is asserted as magical, its hard for players to know the scope of waht is and isnt possible, magic implies anything is possible

@@ -1,49 +1,32 @@
-import { Subject } from "rxjs";
+import { nanoid } from "nanoid";
+import { ClientState } from "../shared/types/host";
 import { Scenario } from "../shared/types/scenario-variables";
-import { Character } from "./main-types/character";
-import { Player } from "./main-types/player";
+import { createGameController } from "./Game/services/game.controller.service";
+import {
+  createPlayers,
+  getScenarioInstance,
+} from "./Game/services/game.setup.service";
+import { GameState } from "./main-types/game";
 
-export function createGame(scenario: Scenario, players: Player[]) {
+export function createGame(scenario: Scenario, clients: ClientState[]) {
   const props = {
-    id: "" + Date.now(),
+    id: nanoid(),
   };
-  const instance = getScenarioInstance(scenario);
-  const state = {
-    world: instance.world,
-    players,
+  const { world } = getScenarioInstance(scenario);
+
+  const state: GameState = {
+    world,
+    players: createPlayers(clients, world.characters),
   };
-  const onStateChange: Subject<typeof state> = new Subject();
 
   const controller = createGameController(state);
 
   controller.startTheGame();
 
-  controller.onUpdateForPlayer((pId: string, playersCharacter: Character) => {
-    const player = state.players.find((p) => p.clientId == pId);
-
-    player?.clientId;
-  });
-
   return {
-    onStateChange,
+    onPlayerStateChange: controller.onPlayerStateChange,
+    getPlayerGameState: controller.getPlayerGameState,
     props,
     state,
   };
-
-  function getScenarioInstance(scenario: Scenario) {
-    return {
-      world: {
-        time: 0,
-        characters: [],
-        towns: [],
-        regions: [],
-        landmarks: [],
-        items: [],
-        animals: [],
-      },
-    };
-  }
 }
-
-export type Game = ReturnType<typeof createGame>;
-export type GameState = Game["state"];

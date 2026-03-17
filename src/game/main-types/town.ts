@@ -1,36 +1,31 @@
-import { random } from "lodash";
-import { Character } from "./character";
-import { Item } from "./item";
-import { Landmark } from "./landmark";
+import { WorldUnit } from "./tile";
+import { ObjectId, WorldObject } from "./world-object";
 
-export type TownTypes = "villiage" | "town" | "city";
-export type TownId = string;
-export type Town = Landmark & {
-  townBuildings: TownBuilding[];
-  type: TownTypes;
+export type Town = WorldObject & {
+  objectType: "town";
+  townBuildings: ObjectId[];
+  townWall: TownWall;
   name: string;
 };
 
-export function createTown(
-  partialTown: Partial<Town> & Pick<Town, "name">
-): Town {
-  const town: Town = {
-    landmarkId: random(1, 1000000) + "",
-    coords: { x: 0, y: 0 },
-    type: "town",
-    townBuildings: [],
-    ...partialTown,
-  };
-  return town;
-}
+export type Building = Required<WorldObject> & {
+  objectType: "building";
+  buildingType: BuildingTypeName;
+};
+export type TownWall = {
+  wallSegments: WallSegment[];
+  gates: TownWallGate[];
+};
+export type TownWallGate = WorldObject & {
+  objectType: "townWallGate";
+  endPoint: WorldUnit;
+};
+export type WallSegment = WorldObject & {
+  objectType: "wallSegment";
+  endPoint: WorldUnit;
+};
 
-export class TownBuilding {
-  characters: Character[] = [];
-  items: Item[] = [];
-  constructor(public town: Town, public type: BuildingTypeName) {}
-}
-
-const medivalTownBuildings = [
+export const medivalTownBuildings = [
   "Keep",
   "Blacksmith",
   "Market",
@@ -51,8 +46,7 @@ const medivalTownBuildings = [
   "Graveyard",
   "Infirmary",
   "School",
-  "Militia Barracks",
   "Gardens",
 ] as const;
 
-type BuildingTypeName = (typeof medivalTownBuildings)[number];
+export type BuildingTypeName = (typeof medivalTownBuildings)[number];

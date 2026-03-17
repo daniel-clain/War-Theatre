@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev:wt:frontend": "cross-env APP=war-theatre vite --host",
+    "ui": "cross-env APP=war-theatre vite --host",
     "dev:wt:backend": "ts-node-dev --project tsconfig.server.json src/backend/server.ts",
     "dev:wt": "concurrently \"cross-env APP=war-theatre vite --host\" \"ts-node-dev --project tsconfig.server.json src/backend/server.ts\""
   },

@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import socketIOClient from "socket.io-client";
 
-import { CharacterState } from "../../backend/MainGame/character";
-import { WorldState } from "../../backend/MainGame/world";
+import { PlayerGameState } from "../../game/main-types/player";
 import { HostState } from "../../shared/types/host";
 import {
   MessagesToServer,
@@ -16,8 +15,7 @@ const socket = socketIOClient(`http://${envUrl}`);
 
 export function useWebsockets() {
   const [hostState, setHostState] = useState<HostState>();
-  const [playerGameState, setPlayerGameState] =
-    useState<ClientPlayerGameState>();
+  const [playerGameState, setPlayerGameState] = useState<PlayerGameState>();
 
   const [connected, setConnected] = useState(false);
 
@@ -34,13 +32,10 @@ export function useWebsockets() {
       setHostState(bs);
     });
 
-    socket.on<"PlayerGameState">(
-      "PlayerGameState",
-      (ps: ClientPlayerGameState) => {
-        console.log("PlayerGameState received from server:", ps);
-        setPlayerGameState(ps);
-      }
-    );
+    socket.on<"PlayerGameState">("PlayerGameState", (ps: PlayerGameState) => {
+      console.log("PlayerGameState received from server:", ps);
+      setPlayerGameState(ps);
+    });
   });
   socket.on("connect_error", (error: any) => {
     //console.error("Connection failed:", error)
@@ -58,13 +53,3 @@ export function useWebsockets() {
 
   return { hostState, playerGameState, connected, send };
 }
-
-export type ClientPlayerState = {
-  character?: CharacterState;
-  options: ClientPlayerOptions;
-};
-
-export type ClientPlayerGameState = {
-  player: ClientPlayerState;
-  world: WorldState;
-};

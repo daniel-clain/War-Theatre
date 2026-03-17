@@ -1,131 +1,190 @@
 import { CSSProperties, useContext } from "react";
-import { sameCoords } from "../../../../game/Game/services/utility.service";
-import { Coords } from "../../../../game/main-types/biome";
-import { PlayerState } from "../../../../game/main-types/player";
-import { AppContext } from "../../../Context/AppProvider";
+import { gameConfig } from "../../../../game/game-config";
+import { TerrainType, Tile, WorldUnit } from "../../../../game/main-types/tile";
+import { WorldObject } from "../../../../game/main-types/world-object";
+import { GameContext } from "../../../Context/GameProvider";
 
-const tileWidth = 80;
-const tileHeight = 70;
+const worldUnitsPerTile = gameConfig.worldUnitsPerTile;
+const pixelPerWorldUnit = gameConfig.pixelPerWorldUnit;
+const tileSizePx = worldUnitsPerTile * pixelPerWorldUnit;
+
+const terrainColors: Record<TerrainType, string> = {
+  grass: "#7cb342",
+  water: "#42a5f5",
+  rock: "#8d6e63",
+  sand: "#ffd54f",
+  mud: "#5d4037",
+};
+
 export function GameMap() {
-  const { playerGameState } = useContext(AppContext);
+  const { playerGameState } = useContext(GameContext);
+  const character = playerGameState.character;
+  const { knownTiles, knownObjects } = character.worldView;
 
-  const { world } = playerGameState!;
+  if (knownTiles.length === 0) {
+    return (
+      <div style={styles.container}>
+        <h4>Map</h4>
+        <div style={styles.empty}>No tiles discovered yet</div>
+      </div>
+    );
+  }
 
-  const biggestX = world.towns.reduce(
-    (max, town) => Math.max(max, town.coords.x),
-    0
+  const minWorldX = Math.min(...knownTiles.map((t) => t.topLeftWorldUnit.x));
+  const maxWorldX = Math.max(
+    ...knownTiles.map((t) => t.topLeftWorldUnit.x + worldUnitsPerTile - 1),
   );
-  const biggestY = world.towns.reduce(
-    (max, town) => Math.max(max, town.coords.y),
-    0
+  const minWorldZ = Math.min(...knownTiles.map((t) => t.topLeftWorldUnit.z));
+  const maxWorldZ = Math.max(
+    ...knownTiles.map((t) => t.topLeftWorldUnit.z + worldUnitsPerTile - 1),
   );
 
-  const xAmount = biggestX;
-  const yAmount = biggestY;
+  const worldUnitColumns = maxWorldX - minWorldX + 1;
+  const worldUnitRows = maxWorldZ - minWorldZ + 1;
+  const mapWidthPx = worldUnitColumns * pixelPerWorldUnit;
+  const mapHeightPx = worldUnitRows * pixelPerWorldUnit;
+
   return (
-    <div style={{ ...styles.mapContainer }}>
+    <div style={styles.container}>
       <h4>Map</h4>
-      <div style={{ ...styles.map, width: xAmount * tileWidth + 1 }}>
-        {Array.from({ length: yAmount }, (_, y) => {
-          return (
-            <div style={styles.mapRow} key={y}>
-              {Array.from({ length: xAmount }, (_, x) => (
-                <MapTile coords={{ x, y }} player={player} key={"" + x + y} />
-              ))}
-            </div>
-          );
-        })}
+      <div
+        style={{ ...styles.mapRoot, width: mapWidthPx, height: mapHeightPx }}
+      >
+        {/* Layer 1: World unit grid — each cell = 1 world unit = pixelPerWorldUnit px */}
+        <div style={styles.worldUnitGrid}>
+          {Array.from({ length: worldUnitRows }, (_, row) => {
+            console.log("rerender");
+            const z = row + minWorldZ;
+            return (
+              <div id={`z${z}`} style={styles.row} key={row}>
+                {Array.from({ length: worldUnitColumns }, (_, col) => {
+                  const x = col + minWorldX;
+                  const worldUnit: WorldUnit = { z, x };
+                  const objectAtUnit = knownObjects.find(
+                    (o) =>
+                      o.origin.x === worldUnit.x && o.origin.z === worldUnit.z,
+                  );
+                  if (objectAtUnit) {
+                    console.log(
+                      `objectAtUnit z${worldUnit.z},x${worldUnit.x}`,
+                      objectAtUnit,
+                    );
+                  }
+                  return (
+                    <WorldUnit_C {...{ worldUnit, row, col, objectAtUnit }} />
+                  );
+                })}
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Layer 2: Tiles — each tile = worldUnitsPerTile world units = tileSizePx px */}
+        <div style={styles.tileLayer}>
+          {knownTiles.map((tile) => (
+            <Tile_C {...{ tile, minWorldX, minWorldZ }} />
+          ))}
+        </div>
       </div>
     </div>
   );
 }
 
-function MapTile({ coords, player }: { coords: Coords; player?: PlayerState }) {
-  const character = player?.character;
-  console.log("character", character);
+function WorldUnit_C({
+  worldUnit,
+  row,
+  col,
+  objectAtUnit,
+}: {
+  worldUnit: WorldUnit;
+  row: number;
+  col: number;
+  objectAtUnit: WorldObject | undefined;
+}) {
+  const buildingAtUnit = objectAtUnit && objectAtUnit.objectType === "building";
+  const characterAtUnit =
+    objectAtUnit && objectAtUnit.objectType === "character";
+  const landmarkAtUnit = objectAtUnit && objectAtUnit.objectType === "landmark";
+  const townAtUnit = objectAtUnit && objectAtUnit.objectType === "town";
+  return (
+    <div
+      id={`z${worldUnit.z}x${worldUnit.x}`}
+      key={`${row}-${col}`}
+      style={{
+        ...styles.worldUnitCell,
+        width: pixelPerWorldUnit,
+        height: pixelPerWorldUnit,
+      }}
+    >
+      {buildingAtUnit && `🏡`}
+      {characterAtUnit && `🙋‍♂️`}
+      {landmarkAtUnit && `⛩️`}
+      {townAtUnit && `🏰`}
+    </div>
+  );
+}
 
-  if (!character || !character.coords) {
-    return <div style={styles.mapTile}></div>;
-  } else {
-    const isPlayersCharacterLocation = sameCoords(character?.coords, coords);
-    const knownTile = character.worldView.knownTiles.find((knownTile) =>
-      sameCoords(knownTile, coords)
-    );
-    if (knownTile) {
-      console.log("knownLocation", knownTile);
-    }
-
-    const knownCharactersInLocation =
-      character.worldView.knownCharacters.filter(
-        ({ tile }) => tile && sameCoords(tile, coords)
-      );
-    const townInTile = knownTile?.landmarks.find((l) => l.type == "town");
-
-    return (
-      <div
-        style={{
-          ...styles.mapTile,
-          ...(knownTile ? styles.knownTile : {}),
-          ...(townInTile ? styles.cityTile : {}),
-        }}
-      >
-        <div style={styles.mapTileContent}>
-          {townInTile && (
-            <div>
-              {townInTile.symbol} {townInTile.name}
-            </div>
-          )}
-          {isPlayersCharacterLocation && (
-            <div>
-              {character.dead ? "💀" : "😎"} {character.name}
-            </div>
-          )}
-          {knownCharactersInLocation?.map((knownCharacter) => {
-            return (
-              <div>
-                {knownCharacter.dead ? "💀" : "🤓"} {knownCharacter.name}
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    );
-  }
+function Tile_C({
+  tile,
+  minWorldX,
+  minWorldZ,
+}: {
+  tile: Tile;
+  minWorldX: number;
+  minWorldZ: number;
+}) {
+  const left = (tile.topLeftWorldUnit.x - minWorldX) * pixelPerWorldUnit;
+  const top = (tile.topLeftWorldUnit.z - minWorldZ) * pixelPerWorldUnit;
+  return (
+    <div
+      key={`${tile.topLeftWorldUnit.x},${tile.topLeftWorldUnit.z}`}
+      style={{
+        ...styles.tileCell,
+        left,
+        top,
+        width: tileSizePx,
+        height: tileSizePx,
+        background: terrainColors[tile.terrainType] ?? "#9e9e9e",
+      }}
+    />
+  );
 }
 
 const styles: Record<string, CSSProperties> = {
-  mapContainer: {
+  container: {
     overflow: "auto",
   },
-  map: {
-    borderTop: 1,
-    borderLeft: 1,
-    borderStyle: "solid",
-    borderColor: "black",
+  empty: {
+    padding: 8,
+    color: "#666",
+  },
+  mapRoot: {
+    position: "relative",
+    border: "1px solid #333",
+  },
+  worldUnitGrid: {
+    zIndex: 1,
+    position: "absolute",
+    inset: 0,
     display: "flex",
     flexDirection: "column",
-    overflow: "visible",
   },
-  mapRow: { display: "flex" },
-  mapTile: {
-    width: tileWidth - 1,
-    height: tileHeight - 1,
-    background: "#daded7",
-    borderStyle: "solid",
-    borderColor: "black",
-    borderRight: 1,
-    borderBottom: 1,
+  row: {
+    display: "flex",
   },
-  knownTile: {
-    background: "#b5e8ab",
+  worldUnitCell: {
+    boxSizing: "border-box",
+    borderRight: "1px solid #eee",
+    borderBottom: "1px solid #eee",
   },
-  playerName: {
-    fontSize: 12,
+  tileLayer: {
+    position: "absolute",
+    inset: 0,
+    pointerEvents: "none",
   },
-  mapTileContent: {
-    padding: 4,
-  },
-  cityTile: {
-    background: "#f2e69d",
+  tileCell: {
+    position: "absolute",
+    boxSizing: "border-box",
+    border: "1px solid #333",
   },
 };

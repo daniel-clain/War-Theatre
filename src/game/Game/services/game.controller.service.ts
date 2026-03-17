@@ -1,123 +1,160 @@
-import { random } from "lodash"
-import { Subject } from "rxjs"
-import { Client } from "../../../shared/types/host"
-import { Character, KnownCharacter } from "../../main-types/character"
-import { Game } from "../../main-types/game"
-import { sameCoords } from "./utility.service"
-import { GameState } from "../../game"
+import { Subject } from "rxjs";
+import { ClientId } from "../../../shared/types/host";
+import { Character } from "../../main-types/character";
+import { GameState } from "../../main-types/game";
+import { Plan } from "../../main-types/plan";
+import { PlayerGameState } from "../../main-types/player";
 
-export function gameController(state: GameState) {
-  const onTimeStep: Subject<number> = new Subject()
-  let gameTimerInterval: NodeJS.Timeout | undefined = undefined
-
-  return {
-    onUpdateForPlayer: ()
-  }
+export function createGameController(state: GameState) {
+  const onTimeStep: Subject<number> = new Subject();
+  let gameTimerInterval: NodeJS.Timeout | undefined = undefined;
+  const onPlayerStateChange: Subject<{
+    clientId: ClientId;
+    playerGameState: PlayerGameState;
+  }> = new Subject();
 
   onTimeStep.subscribe((time) => {
-    onTimeTick()
-  })
+    onTimeTick();
+  });
+  return {
+    onPlayerStateChange,
+    onTimeStep,
+    state,
+    onTimeTick,
+    progressCharacterPlans,
+    charactersSeeTheirTile,
+    workThroughCharactersPlans,
+    startTheGame,
+    startTimeRunning,
+    tearDownGame,
+    getPlayerGameState,
+  };
 
   function onTimeTick() {
-    const { players, world } = state
+    const { players, world } = state;
     if (world.time % 5 == 0) {
-      charactersSeeTheirTile()
-      progressCharacterPlans()
+      charactersSeeTheirTile();
+      progressCharacterPlans();
 
       players.forEach((player) => {
-        if (player.isCurrentStateDifferentFromLastState()) {
-          player.sendPlayerGameState()
-        }
-      })
+        sendPlayerGameState(player.clientId);
+      });
     }
+  }
+  function sendPlayerGameState(clientId: ClientId) {
+    const playerGameState = getPlayerGameState(clientId);
+    onPlayerStateChange.next({
+      clientId,
+      playerGameState,
+    });
+  }
+
+  function getPlayerGameState(clientId: ClientId): PlayerGameState {
+    const player = state.players.find((p) => p.clientId == clientId)!;
+    const character = state.world.characters.find(
+      (c) => c.objectId == player.characterId,
+    )!;
+    return {
+      worldTime: state.world.time,
+      character,
+    };
   }
 
   function progressCharacterPlans() {
-    this.game.world.characters.forEach((c) => {
-      const p = c.activePlan
+    state.world.characters.forEach((c) => {
+      const p = c.activePlan;
       if (p && !p.isComplete) {
-        p.activate()
+        workOnPlan(c, p);
       }
-    })
+    });
+  }
+  function workOnPlan(character: Character, plan: Plan) {
+    /*  if (!plan.mainAction) {
+      throw new Error("Plan should have a main action");
+    }
+    plan.mainAction.workOnAction(); */
   }
 
   function charactersSeeTheirTile() {
-    const { world } = this.game
-    const { time, characters } = world
+    /* const { world } = state;
+    const { time, characters } = world;
     characters.forEach((seeingCharacter) => {
-      const thisTile = seeingCharacter?.tile
-      if (!thisTile) return
+      const thisTile = seeingCharacter?.tile;
+      if (!thisTile) return;
       const seenCharacters = seeingCharacter.tile?.characters.filter(
         (c) => c.name != seeingCharacter.name
-      )
+      );
 
       const knowTile = seeingCharacter.worldView.knownTiles.find(
         (l) => l.x == thisTile.x && l.y == thisTile.y
-      )!
+      )!;
 
       if (seenCharacters?.length) {
-        seenCharacters.forEach(handleSeeingCharacter)
+        seenCharacters.forEach(handleSeeingCharacter);
       }
 
       function handleSeeingCharacter(seenCharacter: Character) {
-        console.log(seeingCharacter.name, " sees ", seenCharacter.name)
-        if (!thisTile) return
+        console.log(seeingCharacter.name, " sees ", seenCharacter.name);
+        if (!thisTile) return;
         const seenCharacterRef: KnownCharacter = {
           name: seenCharacter.name,
           dead: seenCharacter.dead,
           coords: seeingCharacter.coords,
           gameStepLastSeen: time,
-        }
-        const seenCharacterState = seeingCharacter.getState()
+        };
+        const seenCharacterState = seeingCharacter.getState();
 
         const knowCharacter = seeingCharacter.worldView.knownCharacters.find(
           (c) => c.name == seenCharacter.name
-        )
+        );
 
         if (!knowCharacter) {
           console.log(
             `${seeingCharacter.name} see ${seenCharacter.name} at x:${thisTile.x} y:${thisTile.y}`
-          )
+          );
 
           console.log(
             seeingCharacter.name,
             "know before add",
             seeingCharacter.worldView.knownCharacters.map((c) => c.name)
-          )
+          );
 
           if (seeingCharacter.player) {
             console.log(
               "last1",
               seeingCharacter.player.lastSentState?.player.character?.worldView
                 .knownCharacters
-            )
+            );
           }
-          seeingCharacter.worldView.knownCharacters.push(seenCharacterRef)
+          seeingCharacter.worldView.knownCharacters.push(seenCharacterRef);
 
           console.log(
             seeingCharacter.name,
             "know after add",
             seeingCharacter.worldView.knownCharacters.map((c) => c.name)
-          )
+          );
 
-          if (seeingCharacter.player) {
+          if (seeingCharacter.clientId) {
+            const player = state.players.find(
+              (p) => p.clientId == seeingCharacter.clientId
+            )!;
             console.log(
               "last2",
-              seeingCharacter.player.lastSentState?.player.character?.worldView
+              player.lastSentState?.character?.worldView
                 .knownCharacters
-            )
+            );
             const diff =
-              seeingCharacter.player.isCurrentStateDifferentFromLastState()
-            console.log("diff", diff)
+              isCurrentStateDifferentFromLastState(player, seeingCharacter);
+            console.log("diff", diff);
           }
           /* console.log(seeingCharacter.name, " known characters: ")
           seeingCharacter.worldView.knownCharacters.forEach((c) =>
             console.log(c.name)
-          ) */
+          ) 
 
-          knowTile.characterNames?.push(seenCharacterState.name)
+          knowTile.characterNames?.push(seenCharacterState.name);
         } else {
-          console.log("known ", seenCharacterRef.name, "from tiled")
+          console.log("known ", seenCharacterRef.name, "from tiled");
 
           seeingCharacter.worldView.knownTiles.forEach((loopKnownTile) => {
             //remove known char from other existing tile
@@ -131,24 +168,24 @@ export function gameController(state: GameState) {
                     seeingCharacter.name,
                     " known tile ",
                     loopKnownTile
-                  )
-                  return false
+                  );
+                  return false;
                 }
-                return true
+                return true;
               }
-            )
-          })
+            );
+          });
           console.log(
             seeingCharacter.name,
             "add to ",
             knowTile,
             "if not already here"
-          )
+          );
           //add known char to current tile
           if (
             !knowTile.characterNames.some((n) => n == seenCharacterRef.name)
           ) {
-            knowTile.characterNames.push(seenCharacterRef.name)
+            knowTile.characterNames.push(seenCharacterRef.name);
           }
 
           //update known character in list
@@ -160,14 +197,14 @@ export function gameController(state: GameState) {
                   c,
                   " to ",
                   seenCharacterRef
-                )
-                return seenCharacterRef
+                );
+                return seenCharacterRef;
               }
-              return c
-            })
+              return c;
+            });
         }
       }
-    })
+    }); */
   }
 
   function workThroughCharactersPlans() {
@@ -199,108 +236,30 @@ export function gameController(state: GameState) {
     }) */
   }
 
-  assignCharactersToPlayers() {
-    const {
-      players,
-      world: { characters },
-    } = this.game
-    players.forEach((p) => {
-      const availableCharacters = characters.filter((c) =>
-        players.some((p) => p.character?.name != c.name)
-      )
-      const randomCharacter =
-        availableCharacters[random(0, availableCharacters.length)]
-      p.character = randomCharacter
-      randomCharacter.player = p
-    })
+  function startTheGame() {
+    startTimeRunning();
+
+    state.players.forEach((player) => {
+      console.log("initial update");
+      sendPlayerGameState(player.clientId);
+    });
   }
 
-  startTheGame() {
-    this.startTimeRunning()
+  function startTimeRunning() {
+    const { world } = state;
 
-    this.game.players.forEach((player) => {
-      console.log("initial update")
-      player.sendPlayerGameState()
-    })
-  }
-
-  startTimeRunning() {
-    const { world } = this.game
-
-    this.gameTimerInterval = setInterval(() => {
-      world.time++
+    gameTimerInterval = setInterval(() => {
+      world.time++;
       if (world.time > 100) {
-        console.log("finish")
+        //console.log("finish");
       } else {
-        this.onTimeStep.next(world.time)
+        onTimeStep.next(world.time);
       }
-    }, 1000)
+    }, 1000);
   }
 
-  get endTime() {
-    return this.game.world.gameEndingMechanic
+  function tearDownGame() {
+    console.log(`tearing down game`);
+    clearInterval(gameTimerInterval);
   }
-
-  fastForwardToEnd() {}
-  stopGame() {
-    console.log("game stopped")
-    if (this.gameTimerInterval) clearTimeout(this.gameTimerInterval)
-    this.tearDownGame()
-  }
-
-  tearDownGame() {
-    console.log(`tearing down game`)
-    clearInterval(this.gameTimerInterval)
-  }
-
-  playerReconnect(client: Client) {
-    const player = this.game.players.find(
-      (p) => p.client?.clientId == client.clientId
-    )!
-    if (player.client?.socket) {
-      player.client.socket = client.socket
-    }
-
-    console.log(player.client?.name, " reconnected")
-  }
-
-  makeTileKnownToCharacter(tile: Tile, character: Character) {
-    const knownTile = character.worldView.knownTiles.find((t) =>
-      sameCoords(t, tile)
-    )
-    const tileState = tile.getState()
-    const newKnownTile: KnownTile = {
-      characterNames: tileState.characters.map((c) => c.name),
-      x: 2,
-      y: 4,
-      items: tileState.items,
-      timeLastSeen: this.game.world.time,
-      biome: tileState.biome,
-      landmarks: tileState.landmarks,
-    }
-    if (!knownTile) {
-      character.worldView.knownTiles.push(newKnownTile)
-    } else {
-      knownTile.timeLastSeen = this.game.world.time
-    }
-  }
-  /* 
-    characterMoveIn(character: Character) {
-      character.tile?.characterMoveOut(character)
-
-      console.log(character.name, " moving into ", this.getState())
-
-      character.tile = this
-      if (!this.characters.find((c) => c.name == character.name)) {
-        this.characters.push(character)
-      }
-
-      this.makeTileKnownToCharacter(character)
-    }
-
-    characterMoveOut(character: Character) {
-      console.log(character.name, " moving out of ", this.getState())
-      this.characters = this.characters.filter((c) => c.name != character.name)
-    }
- */
 }

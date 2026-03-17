@@ -1,12 +1,16 @@
 import ReactDOM from "react-dom/client";
-import { App_C } from "./App";
-import { AppProvider } from "./Context/AppProvider";
+import { gameBackendInterface } from "./Context/game-backend-interface.service";
+import { GameProvider } from "./Context/GameProvider";
+import { Game_C } from "./views/Game/Game";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,
 );
 root.render(
-  <AppProvider>
+  <GameProvider gameBackendInterface={gameBackendInterface}>
+    <Game_C />
+  </GameProvider>,
+  /* <AppProvider>
     <App_C />
-  </AppProvider>,
+  </AppProvider>, */
 );
